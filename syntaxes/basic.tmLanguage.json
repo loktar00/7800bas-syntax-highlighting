@@ -28,13 +28,19 @@
 		},
 		{
 			"include": "#labels"
+		},
+		{
+			"include": "#plotsprite"
+		},
+		{
+			"include": "#doublebuffer"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.basic",
-				"match": "(?i)\\b(if|rand|romsize|restorescreen|doublewide|dlmemory|alphachars|alphadata|drawscreen|BACKGRND|then|goto|gosub|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|to)\\b"
+				"match": "\\b(if|rand|romsize|restorescreen|doublewide|dlmemory|alphachars|alphadata|incgraphic|drawscreen|BACKGRND|then|goto|gosub|savescreen|clearscreen|plotchars|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|to)\\b"
 			}]
 		},
 		"random": {
@@ -53,8 +59,8 @@
 		},
 		"strings": {
 			"name": "string.quoted.double.basic",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "\\'",
+			"end": "\\'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.basic",
@@ -90,8 +96,48 @@
 		},
 		"labels": {
 			"patterns": [{
-				"name": "entity.name.function.xcbasic",
+				"name": "entity.name.function.basic",
 				"match": "\\b(main)\\b"
+			}]
+		},
+		"plotsprite": {
+			"patterns": [{
+				"name": "entity.name.function.basic",
+				"match": "\\b((plotsprite)\\s(\\w+)\\s(\\w+|\\d+)\\s(\\w+|\\d+)(\\s(\\d+|\\w+))?(\\s(\\w+|\\d+))?)\\b",
+				"captures": {
+					"1": {
+						"name": "keyword.control.basic"
+					},
+					"2": {
+						"name": "entity.name.function.basic"
+					},
+					"3": {
+						"name": "entity.name.function.basic"
+					},
+					"4": {
+						"name": "entity.name.function.basic"
+					},
+					"5": {
+						"name": "entity.name.function.basic"
+					},
+					"6": {
+						"name": "entity.name.function.basic"
+					}
+				}
+			}]
+		},
+		"doublebuffer": {
+			"patterns": [{
+				"name": "entity.name.function.basic",
+				"match": "\\b(doublebuffer|characterset)\\s(\\w+)\\b",
+				"captures": {
+					"1": {
+						"name": "keyword.control.basic"
+					},
+					"2": {
+						"name": "entity.name.function.basic"
+					}
+				}
 			}]
 		}
 	},
