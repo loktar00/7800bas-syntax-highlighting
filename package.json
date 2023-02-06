@@ -2,15 +2,20 @@
   "name": "7800bas",
   "displayName": "7800basic",
   "description": "Syntax Highlighting for 7800 basic",
+  "publisher": "loktar",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.75.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loktar00/7800bas-syntax-highlighting"
   },
   "categories": [
     "Programming Languages"
   ],
   "activationEvents" : [],
-  "main": "./out/extension",
+  "main": "",
   "contributes": {
     "languages": [{
       "id": "basic",

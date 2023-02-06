@@ -7,13 +7,45 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#random"
+		},
+		{
+			"include": "#vardefs"
+		},
+		{
+			"include": "#hexanumerics"
+		},
+		{
+			"include": "#numerics"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.basic",
-				"match": "\\b(if|goto|gosub|dim|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|set)\\b"
+				"match": "(?i)\\b(if|rand|then|goto|gosub|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|to)\\b"
+			}]
+		},
+		"random": {
+			"patterns": [{
+				"name": "entity.name.function.basic",
+				"match": "rand&([012]?[0-9][0-9])",
+				"captures": {
+					"1": {
+						"name": "keyword.control.basic"
+					},
+					"2": {
+						"name": "entity.name.function.basic"
+					}
+				}
 			}]
 		},
 		"strings": {
@@ -26,7 +58,33 @@
 					"match": "\\\\."
 				}
 			]
-		}
+		},
+		"operators": {
+			"match": "(?i)(\\*|to|/|\\+|-|@|=|<>|<|>|<=|>=|&|\\||\\^)",
+			"name": "keyword.operator.asp"
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.basic",
+				"match": "(?i)(rem)(.*)"
+			}]
+		},
+		"vardefs": {
+			"match": "(?i:\\s*\\b(dim|set)\\b\\s*)",
+			"name": "storage.type.basic"
+		},
+		"hexanumerics": {
+			"patterns": [{
+				"name": "constant.numeric.basic",
+				"match": "\\$([0-9a-fA-F]+)\\b"
+			}]
+		},
+		"numerics": {
+			"patterns": [{
+				"name": "constant.numeric.basic",
+				"match": "\\b([0-9]+)\\b"
+			}]
+		},
 	},
 	"scopeName": "source.bas"
 }
