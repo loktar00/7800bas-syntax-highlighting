@@ -25,13 +25,16 @@
 		},
 		{
 			"include": "#numerics"
+		},
+		{
+			"include": "#labels"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.basic",
-				"match": "(?i)\\b(if|rand|then|goto|gosub|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|to)\\b"
+				"match": "(?i)\\b(if|rand|romsize|restorescreen|doublewide|dlmemory|alphachars|alphadata|drawscreen|BACKGRND|then|goto|gosub|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|to)\\b"
 			}]
 		},
 		"random": {
@@ -85,6 +88,12 @@
 				"match": "\\b([0-9]+)\\b"
 			}]
 		},
+		"labels": {
+			"patterns": [{
+				"name": "entity.name.function.xcbasic",
+				"match": "\\b(main)\\b"
+			}]
+		}
 	},
 	"scopeName": "source.bas"
 }
