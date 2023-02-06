@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "7800basic",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.basic",
+				"match": "\\b(if|goto|gosub|dim|doublebuffer|incgraphic|savescreen|clearscreen|characterset|plotchars|plotsprite|plotvalue|displaymode|for|next|plotmap|memset|memcpy|return|set)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.basic",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.basic",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.bas"
+}
